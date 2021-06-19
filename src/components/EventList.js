@@ -102,10 +102,10 @@ export default props => {
                 display: "flex",
                 flexDirection: "column"
               }}
-            >
+            >  
               <Button
                 variant="contained"
-                color="primary"
+                color="green"
                 startIcon={<RemoveIcon />}
                 onClick={() => props.onRemoveItem(node.uid)}
                 title="Cancel (Delete) Appointment"

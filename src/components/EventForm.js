@@ -4,7 +4,6 @@ import { DateTimePicker, MuiPickersUtilsProvider } from "@material-ui/pickers";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import { dateFormat } from "../utils/DateUtils";
-import emailjs from "emailjs-com";
 
 const containerStyle = {
   zIndex: 10,
@@ -43,17 +42,6 @@ export default props => {
     debugger;
   }, [props, frmTitle]);
   */
-  const sendEmail = (e) => {
-    e.preventDefault();
-
-    emailjs.sendForm('gmail', 'service_hk8xsmu', e.target, 'user_oAnAoq8VpdKx5kTecQoet')
-      .then((result) => {
-          console.log(result.text);
-      }, (error) => {
-          console.log(error.text);
-      });
-      e.target.reset();
-  };
   const handleEsc = evt => {
     if (evt.keyCode === 27) {
       window.removeEventListener("keydown", handleEsc);
@@ -159,6 +147,16 @@ export default props => {
         }
       />
       <div style={{ marginTop: "2em", minWidth: "12em" }}>
+      {/* <Button
+            variant="contained"
+            component="label"
+         >
+                 Upload Resume
+                 <input
+                    type="file"
+                   hidden
+         />
+        </Button>           */}
         <Button
           variant="contained"
           onClick={props.onFormCancel}
