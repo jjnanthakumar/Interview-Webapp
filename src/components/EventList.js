@@ -36,7 +36,7 @@ export default props => {
                   <Typography
                     component="p"
                     //variant="body2"
-                    style={{ color: "#FFFFFF" }}
+                    style={{ color: "#000000" }}
                   >
                     <span style={{ fontWeight: "bold", marginRight: ".5em" }}>
                       From:
@@ -46,7 +46,7 @@ export default props => {
                   <Typography
                     component="p"
                     //variant="body2"
-                    style={{ color: "#FFFFFF" }}
+                    style={{ color: "#000000" }}
                   >
                     <span style={{ fontWeight: "bold", marginRight: ".5em" }}>
                       To:
@@ -56,14 +56,14 @@ export default props => {
                   <Typography
                     component="p"
                     //variant="body2"
-                    style={{ color: "#FFFFFF", fontWeight: "bold" }}
+                    style={{ color: "#000000", fontWeight: "bold" }}
                   >
                     {node.title}
                   </Typography>
                   <Typography
                     component="p"
                     //variant="body2"
-                    style={{ color: "#FFFFFF" }}
+                    style={{ color: "#000000" }}
                   >
                     <span style={{ fontWeight: "bold", marginRight: ".5em" }}>
                       Location:
@@ -77,7 +77,7 @@ export default props => {
                   <Typography
                     component="span"
                     //variant="body2"
-                    style={{ color: "#FFFFFF", fontSize: "1em" }}
+                    style={{ color: "#000000", fontSize: "1em" }}
                   >
                     {node.description}
                   </Typography>
