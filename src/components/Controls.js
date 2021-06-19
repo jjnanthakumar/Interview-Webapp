@@ -17,7 +17,7 @@ const containerStyle = {
 export default props => {
   return (
     <div style={containerStyle} id="titlebar">
-      <div>Interview Scheduler</div>
+      <div>Interview Creation Portal</div>
       <Button
         variant="contained"
         color="primary"

@@ -4,6 +4,7 @@ import { DateTimePicker, MuiPickersUtilsProvider } from "@material-ui/pickers";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import { dateFormat } from "../utils/DateUtils";
+import emailjs from "emailjs-com";
 
 const containerStyle = {
   zIndex: 10,
@@ -42,6 +43,17 @@ export default props => {
     debugger;
   }, [props, frmTitle]);
   */
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm('gmail', 'service_hk8xsmu', e.target, 'user_oAnAoq8VpdKx5kTecQoet')
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
+      e.target.reset();
+  };
   const handleEsc = evt => {
     if (evt.keyCode === 27) {
       window.removeEventListener("keydown", handleEsc);
@@ -56,6 +68,7 @@ export default props => {
       title: document.getElementById("event_title").value,
       location: document.getElementById("event_location").value,
       description: document.getElementById("event_description").value,
+      email: document.getElementById("event_email").value,
       uid: props.hasSelectedEvent ? props.selectedEvent.uid : +new Date()
     };
     props.onFormSubmit(event);
@@ -66,7 +79,8 @@ export default props => {
         document.getElementById("dtend").value === "" ||
         document.getElementById("event_title").value === "" ||
         document.getElementById("event_location").value === "" ||
-        document.getElementById("event_description").value === ""
+        document.getElementById("event_description").value === "" ||
+        document.getElementById("event_email").value === ""
     );
   };
   const inputStyle = {
@@ -133,6 +147,15 @@ export default props => {
         style={inputStyle}
         defaultValue={
           props.hasSelectedEvent ? props.selectedEvent.description : null
+        }
+      />
+        <TextField
+        id="event_email"
+        label="email"
+        onChange={handleTextChange}
+        style={inputStyle}
+        defaultValue={
+          props.hasSelectedEvent ? props.selectedEvent.email : null
         }
       />
       <div style={{ marginTop: "2em", minWidth: "12em" }}>

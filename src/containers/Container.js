@@ -26,35 +26,39 @@ class Container extends Component {
       events: [
         {
           uid: 1578710655009,
-          dtstart: new Date("09/01/2020 23:00"),
-          dtend: new Date("09/01/2020 23:45"),
+          dtstart: new Date("06/21/2021 23:00"),
+          dtend: new Date("06/21/2021 23:45"),
           title: "Abhinav Shukla Interview",
           location: "google meet",
-          description: "SDE Intern"
+          description: "SDE Intern",
+          email: "abhinavshukla1177@gmail.com"
         },
         {
           uid: 1578710655010,
-          dtstart: new Date("09/15/2020 17:15"),
-          dtend: new Date("09/15/2020 19:15"),
+          dtstart: new Date("06/20/2021 21:15"),
+          dtend: new Date("06/20/2021 22:15"),
           title: "Carry Minati Interview",
           location: "google meet",
-          description: "Business Operations"
+          description: "Business Operations",
+          email: "xyz@gmail.com"
         },
         {
           uid: 1578710655011,
-          dtstart: new Date("7/15/2020 17:15"),
-          dtend: new Date("7/15/2020 19:15"),
+          dtstart: new Date("06/19/2021 17:15"),
+          dtend: new Date("06/19/2021 19:15"),
           title: "Akash Kumar Interview",
           location: "Google Meet",
-          description: "Teaching Instructor"
+          description: "Teaching Instructor",
+          email: "xyz@gmail.com"
         },
         {
           uid: 1578710655005,
-          dtstart: new Date("5/15/2020 17:15"),
-          dtend: new Date("5/15/2020 19:15"),
+          dtstart: new Date("06/22/2021 17:15"),
+          dtend: new Date("06/22/2021 19:15"),
           title: "Sunny Singh Interview",
           location: "zoom",
-          description: "UI/UX Developer"
+          description: "UI/UX Developer",
+          email: "xyz@gmail.com"
         }
       ]
     };
@@ -127,7 +131,7 @@ class Container extends Component {
         {this.state.formVisible ? (
           <EventForm
             formVisible={this.state.formVisible}
-            formTitle="Schedule an Event"
+            formTitle="Schedule Interview"
             onFormCancel={this.handleFormCancel}
             onFormSubmit={this.handleFormSubmit}
             selectedEvent={this.state.selectedEvent}

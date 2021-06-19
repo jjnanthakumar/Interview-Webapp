@@ -70,6 +70,16 @@ export default props => {
                     </span>
                     {node.location}
                   </Typography>
+                  <Typography
+                    component="p"
+                    //variant="body2"
+                    style={{ color: "#000000" }}
+                  >
+                    <span style={{ fontWeight: "bold", marginRight: ".5em" }}>
+                      Email:
+                    </span>
+                    {node.email}
+                  </Typography>
                 </React.Fragment>
               }
               secondary={
