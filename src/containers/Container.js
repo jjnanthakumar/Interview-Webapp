@@ -3,6 +3,8 @@ import DateTime from "../data/DateTime";
 import EventForm from "../components/EventForm";
 import EventList from "../components/EventList";
 import Controls from "../components/Controls";
+import Firebase from 'firebase';
+import config from "../components/config";
 
 const style = {
   backgroundColor: "00FFFF",
