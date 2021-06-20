@@ -53,7 +53,7 @@ export default props => {
   const sendText = (phone, text) => {
     //const { text } = this.state;
     //pass text message GET variables via query string
-    fetch(`http://127.0.0.1:4000/send-text?recipient=${phone}&textmessage=${'Your Interview has been Scheduled at'+text}`)
+    fetch(`http://127.0.0.1:4000/send-text?recipient=${phone}&textmessage=${'Your Interview has been Scheduled at '+text}`)
     .catch(err => console.error(err))
   }
   const handleSubmit = () => {
@@ -64,6 +64,7 @@ export default props => {
       location: document.getElementById("event_location").value,
       description: document.getElementById("event_description").value,
       email: document.getElementById("event_email").value,
+      phone: document.getElementById("event_phone").value,
       uid: props.hasSelectedEvent ? props.selectedEvent.uid : +new Date()
     };
     props.onFormSubmit(event);
