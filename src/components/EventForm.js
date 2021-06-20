@@ -49,6 +49,13 @@ export default props => {
     }
   };
   window.addEventListener("keydown", handleEsc);
+
+  const sendText = (phone, text) => {
+    //const { text } = this.state;
+    //pass text message GET variables via query string
+    fetch(`http://127.0.0.1:4000/send-text?recipient=${phone}&textmessage=${'Your Interview has been Scheduled at'+text}`)
+    .catch(err => console.error(err))
+  }
   const handleSubmit = () => {
     const event = {
       dtstart: new Date(document.getElementById("dtstart").value),
@@ -68,7 +75,8 @@ export default props => {
         document.getElementById("event_title").value === "" ||
         document.getElementById("event_location").value === "" ||
         document.getElementById("event_description").value === "" ||
-        document.getElementById("event_email").value === ""
+        document.getElementById("event_email").value === "" ||
+        document.getElementById("event_phone").value === ""
     );
   };
   const inputStyle = {
@@ -146,6 +154,15 @@ export default props => {
           props.hasSelectedEvent ? props.selectedEvent.email : null
         }
       />
+      <TextField
+        id="event_phone"
+        label="phone"
+        onChange={handleTextChange}
+        style={inputStyle}
+        defaultValue={
+          props.hasSelectedEvent ? props.selectedEvent.phone : null
+        }
+      />
       <div style={{ marginTop: "2em", minWidth: "12em" }}>
       {/* <Button
             variant="contained"
@@ -167,7 +184,10 @@ export default props => {
         <Button
           variant="contained"
           color="primary"
-          onClick={handleSubmit}
+          onClick={() => {
+            handleSubmit();
+            sendText(document.getElementById("event_phone").value, document.getElementById("dtstart").value);
+          }}
           id="formSubmit"
           disabled={isDisabled}
         >

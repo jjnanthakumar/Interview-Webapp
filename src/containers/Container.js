@@ -33,7 +33,8 @@ class Container extends Component {
           title: "Abhinav Shukla Interview",
           location: "google meet",
           description: "SDE Intern",
-          email: "abhinavshukla1177@gmail.com"
+          email: "abhinavshukla1177@gmail.com",
+          phone: "9680848822"
         },
         {
           uid: 1578710655010,
@@ -42,7 +43,8 @@ class Container extends Component {
           title: "Carry Minati Interview",
           location: "google meet",
           description: "Business Operations",
-          email: "xyz@gmail.com"
+          email: "xyz@gmail.com",
+          phone: "0115524848"
         },
         {
           uid: 1578710655011,
@@ -51,7 +53,8 @@ class Container extends Component {
           title: "Akash Kumar Interview",
           location: "Google Meet",
           description: "Teaching Instructor",
-          email: "xyz@gmail.com"
+          email: "xyz@gmail.com",
+          phone: "0177894848"
         },
         {
           uid: 1578710655005,
@@ -60,7 +63,8 @@ class Container extends Component {
           title: "Sunny Singh Interview",
           location: "zoom",
           description: "UI/UX Developer",
-          email: "xyz@gmail.com"
+          email: "xyz@gmail.com",
+          phone: "01154674848"
         }
       ]
     };
