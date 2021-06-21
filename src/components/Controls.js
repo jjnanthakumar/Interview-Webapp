@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "@material-ui/core/Button";
 import AddIcon from "@material-ui/icons/Add";
-
+import TextField from "@material-ui/core/TextField";
 const containerStyle = {
   backgroundColor: "#cccccc",
   color: "#000000",
@@ -12,6 +12,9 @@ const containerStyle = {
   justifyContent: "space-around",
   padding: "0.5em 1em",
   width: "100%"
+};
+const inputStyle = {
+  minWidth: "14em"
 };
 
 export default props => {

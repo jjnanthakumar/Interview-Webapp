@@ -15,7 +15,6 @@ const containerStyle = {
   overflowY: "scroll",
   width: "100%"
 };
-
 export default props => {
   const events = props.events
     .sort((a, b) => {
@@ -27,9 +26,9 @@ export default props => {
       return (
         <div key={index}>
           <ListItem button alignItems="flex-start">
-            <ListItemIcon>
+            {/* <ListItemIcon>
               <EventIcon style={{ color: "#FFFF00", fontSize: "2em" }} />
-            </ListItemIcon>
+            </ListItemIcon> */}
             <ListItemText
               primary={
                 <React.Fragment>
@@ -79,6 +78,7 @@ export default props => {
                       Email:
                     </span>
                     {node.email}
+    
                   </Typography>
                   <Typography
                     component="p"
@@ -142,8 +142,15 @@ export default props => {
       );
     });
   return (
+    <>
+    {/* <div>
+    <input type="text" className="input" onChange={this.handleChange} placeholder="Search..." />
+        <ul>
+        </ul>
+    </div> */}
     <div style={containerStyle}>
       <List>{events}</List>
     </div>
+    </>
   );
 };

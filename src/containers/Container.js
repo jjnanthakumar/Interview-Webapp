@@ -3,8 +3,6 @@ import DateTime from "../data/DateTime";
 import EventForm from "../components/EventForm";
 import EventList from "../components/EventList";
 import Controls from "../components/Controls";
-import Firebase from 'firebase';
-import config from "../components/config";
 
 const style = {
   backgroundColor: "00FFFF",
@@ -25,6 +23,7 @@ class Container extends Component {
       formVisible: false,
       hasSelectedEvent: false,
       selectedEvent: {},
+      filtered: [],
       events: [
         {
           uid: 1578710655009,
@@ -73,6 +72,7 @@ class Container extends Component {
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
     this.handleRemoveItem = this.handleRemoveItem.bind(this);
     this.handleEditItem = this.handleEditItem.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
   handleShowFormClick() {
     this.setState({
@@ -85,6 +85,26 @@ class Container extends Component {
       hasSelectedEvent: false,
       selectedEvent: {}
     });
+  }
+  handleChange(e) {
+  let currentList = [];
+  let newList = [];
+
+  if (e.target.value !== "") {
+  
+  currentList = this.props.events;
+
+  newList = currentList.filter(item => {
+    const lc = item.toLowerCase();
+    const filter = e.target.value.toLowerCase();
+    return lc.includes(filter);
+   });
+  } else {
+  newList = this.props.filtered;
+  }
+  this.setState({
+    filtered: newList
+  });
   }
   handleFormSubmit(event) {
     let events = this.state.events;
@@ -124,7 +144,15 @@ class Container extends Component {
     const dt = new DateTime();
     const currentDateTime = dt.getCurrentDateTime();
     this.setState({
+      filtered: this.props.events
+    });
+    this.setState({
       dt: currentDateTime
+    });
+  }
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      filtered: nextProps.events
     });
   }
   render() {
@@ -134,6 +162,11 @@ class Container extends Component {
           onShowFormClick={this.handleShowFormClick}
           formVisible={this.state.formVisible}
         />
+       <div>
+            <input type="text" className="input" onChange={this.handleChange} placeholder="Search..." />
+         <ul>
+          </ul>
+      </div>
         {this.state.formVisible ? (
           <EventForm
             formVisible={this.state.formVisible}
