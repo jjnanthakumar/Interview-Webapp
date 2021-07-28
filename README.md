@@ -1,7 +1,6 @@
 
 
 Live Demo (https://interviewapp11.herokuapp.com/). This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). Backend is written using Express and for SMS notification @Twillio (https://www.twilio.com/)
-It was developed as an Assignment for Scalar Acadmey SDE intern (https://docs.google.com/document/d/1eYcmOCA71mIYe9jGQ_mLJ9uqJhfijejIsgl7JoJanKg/edit).
 
 ## Available Scripts
 
